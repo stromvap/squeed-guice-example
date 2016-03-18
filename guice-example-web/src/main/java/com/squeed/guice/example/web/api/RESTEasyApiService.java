@@ -22,6 +22,6 @@ public class RESTEasyApiService {
     @GET
     @Produces("application/json")
     public Response get() {
-        return Response.status(200).entity(Arrays.asList(businessLogic.getBusiness(), transaction.getTransaction())).build();
+        return Response.status(200).entity(Arrays.asList(businessLogic.toString(), transaction.toString())).build();
     }
 }

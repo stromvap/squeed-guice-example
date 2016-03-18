@@ -18,10 +18,15 @@ public class TransactionPage extends HttpServlet implements HttpJspPage {
     }
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getGuiceInstance(TransactionManager.class).push(new Transaction(req.getQueryString()));
-        _jspService(req, resp);
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        getGuiceInstance(TransactionManager.class).push(new Transaction(getPath(request)));
+        _jspService(request, response);
         getGuiceInstance(TransactionManager.class).pop();
+    }
+
+    private String getPath(HttpServletRequest request) {
+        String includeUri = (String) request.getAttribute("javax.servlet.include.request_uri");
+        return request.getServletPath() + (includeUri != null ? " -> " + includeUri : "");
     }
 
     @Override

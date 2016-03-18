@@ -11,10 +11,10 @@
 <h1>Guice Example</h1>
 
 <h2>index.jsp</h2>
-<span><%= getGuiceInstance(BusinessLogic.class).getBusiness() %></span>
-<span><%= getGuiceInstance(Transaction.class).getTransaction() %></span>
+<p><%= getGuiceInstance(BusinessLogic.class).toString() %></p>
+<p><%= getGuiceInstance(Transaction.class).toString() %></p>
 
-<jsp:include page="menu.jsp"/>
+<jsp:include page="sub.jsp"/>
 
 </body>
 </html>

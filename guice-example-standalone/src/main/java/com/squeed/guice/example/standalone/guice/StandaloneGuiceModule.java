@@ -3,21 +3,18 @@ package com.squeed.guice.example.standalone.guice;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.google.inject.Scopes;
 import com.squeed.guice.example.business.Transaction;
+import com.squeed.guice.example.business.guice.SimpleTransactionProvider;
 import com.squeed.guice.example.thread.scope.CustomScopes;
-import com.squeed.guice.example.thread.scope.ThreadCache;
-import com.squeed.guice.example.thread.scope.ThreadScoped;
+import com.squeed.guice.example.thread.scope.ThreadGuiceModule;
 
 public class StandaloneGuiceModule extends AbstractModule {
 
-    private static final Injector injector = Guice.createInjector(new StandaloneGuiceModule());
+    private static final Injector injector = Guice.createInjector(new ThreadGuiceModule(), new StandaloneGuiceModule());
 
     @Override
     protected void configure() {
-        bindScope(ThreadScoped.class, CustomScopes.THREAD);
-        bind(ThreadCache.class).in(Scopes.SINGLETON);
-        bind(Transaction.class).toProvider(StandaloneTransactionProvider.class).in(CustomScopes.THREAD);
+        bind(Transaction.class).toProvider(SimpleTransactionProvider.class).in(CustomScopes.THREAD);
     }
 
     public static Injector getInjector() {

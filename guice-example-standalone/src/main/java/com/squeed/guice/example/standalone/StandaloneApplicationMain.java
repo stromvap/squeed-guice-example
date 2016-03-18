@@ -22,13 +22,13 @@ public class StandaloneApplicationMain {
                     standaloneApplicationMain.run();
                 }
             }.start();
-            Thread.sleep(1000);
+            Thread.sleep(500);
         }
     }
 
     public void run() {
-        System.out.println(businessLogic.getBusiness());
-        System.out.println(transaction.getTransaction());
+        System.out.println(businessLogic.toString());
+        System.out.println(transaction.toString());
         System.out.println();
     }
 }

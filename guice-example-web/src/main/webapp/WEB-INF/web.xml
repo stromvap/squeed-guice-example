@@ -25,7 +25,7 @@
     <!-- RESTEASY -->
     <context-param>
         <param-name>resteasy.guice.modules</param-name>
-        <param-value>com.squeed.guice.example.web.guice.WebGuiceModule</param-value>
+        <param-value>com.squeed.guice.example.web.api.guice.ApiGuiceModule</param-value>
     </context-param>
 
     <listener>

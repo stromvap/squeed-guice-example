@@ -7,7 +7,10 @@ public class BusinessLogic {
     @Inject
     private Transaction transaction;
 
-    public String getBusiness() {
-        return "In BusinessLogic with Transaction name: " + transaction.getName();
+    @Override
+    public String toString() {
+        return "BusinessLogic{" +
+                "transaction=" + transaction +
+                '}';
     }
 }

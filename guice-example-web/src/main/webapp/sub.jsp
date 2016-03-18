@@ -3,6 +3,8 @@
 <%@ page import="com.squeed.guice.example.business.Transaction" %>
 <%@ page extends="com.squeed.guice.example.web.jsp.TransactionPage" %>
 
-<h2>menu.jsp</h2>
-<span><%= getGuiceInstance(BusinessLogic.class).getBusiness() %></span>
-<span><%= getGuiceInstance(Transaction.class).getTransaction() %></span>
+<div style="margin-left: 20px">
+    <h2>sub.jsp</h2>
+    <p><%= getGuiceInstance(BusinessLogic.class).toString() %></p>
+    <p><%= getGuiceInstance(Transaction.class).toString() %></p>
+</div>

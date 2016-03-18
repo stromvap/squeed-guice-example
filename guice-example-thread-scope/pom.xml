@@ -20,7 +20,7 @@
         </dependency>
     </dependencies>
 
-    <!-- TODO: Link in readme to where i got the thread scope implementation-->
-    <!-- TODO: Push to github-->
+    <!-- TODO: Link in readme to where i got the thread scope implementation -->
+    <!-- TODO: Write some JavaDoc and comments -->
 
 </project>
