@@ -14,10 +14,6 @@ public class WebGuiceModule extends AbstractModule {
     protected void configure() {
         bind(TransactionManager.class).in(ServletScopes.REQUEST);
         bind(Transaction.class).toProvider(WebTransactionProvider.class);
-
-//        TODO: Explain why we should not bind this with Request scope
-//        bind(Transaction.class).toProvider(WebTransactionProvider.class).in(ServletScopes.REQUEST);
-
     }
 
     public static Injector getInjector() {

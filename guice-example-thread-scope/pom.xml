@@ -11,6 +11,7 @@
 
     <artifactId>guice-example-thread-scope</artifactId>
     <packaging>jar</packaging>
+    <description>Guice Thread-scope implementation. Based on https://github.com/google/guice/issues/114</description>
 
     <dependencies>
         <dependency>
@@ -20,7 +21,6 @@
         </dependency>
     </dependencies>
 
-    <!-- TODO: Link in readme to where i got the thread scope implementation -->
     <!-- TODO: Write some JavaDoc and comments -->
 
 </project>
