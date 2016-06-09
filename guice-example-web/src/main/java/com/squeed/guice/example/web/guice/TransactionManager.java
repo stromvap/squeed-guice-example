@@ -10,10 +10,13 @@ public class TransactionManager {
 
     public void push(Transaction transaction) {
         transactions.push(transaction);
+        System.out.println("Push Size: " + transactions.size());
     }
 
     public Transaction pop() {
-        return transactions.pop();
+        Transaction pop = transactions.pop();
+        System.out.println("Pop Size:  " + transactions.size());
+        return pop;
     }
 
     public Transaction peek() {
