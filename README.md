@@ -262,22 +262,22 @@ I believe that working with legacy actually can be quite fun and rewarding (to a
 In order to see the full examples in action just clone the github repo and execute the follow these steps:
 
 **Install and run WildFly with Docker:**
-docker run -it -p 8080:8080 -v /local/folder/for/your/deployments/:/opt/jboss/wildfly/standalone/deployments/:rw jboss/wildfly
+`docker run -it -p 8080:8080 -v /local/folder/for/your/deployments/:/opt/jboss/wildfly/standalone/deployments/:rw jboss/wildfly`
 
 **Install and run WildFly locally:**
-Download and extract the wildfly-10.0.0.Final.tar.gz from http://wildfly.org/downloads/
-Start it with /your/installation/folder/wildfly-10.0.0.Final/bin/standalone.sh
+Download and extract the `wildfly-10.0.0.Final.tar.gz` from http://wildfly.org/downloads/
+Start it with `/your/installation/folder/wildfly-10.0.0.Final/bin/standalone.sh`
 
 **Clone the repository:**
 
 [https://github.com/stromvap/squeed-guice-example](https://github.com/stromvap/squeed-guice-example)
 
 **Build the project:**
-mvn clean install
+`mvn clean install`
 
 **Copy war to WildFly:**
-Docker: cp guice-example-web/target/guice-example-web-1.0.0-SNAPSHOT.war /local/folder/for/your/deployments/
-Locally: cp guice-example-web/target/guice-example-web-1.0.0-SNAPSHOT.war /your/installation/folder/wildfly-10.0.0.Final/standalone/deployments/
+Docker: `cp guice-example-web/target/guice-example-web-1.0.0-SNAPSHOT.war /local/folder/for/your/deployments/`
+Locally: `cp guice-example-web/target/guice-example-web-1.0.0-SNAPSHOT.war /your/installation/folder/wildfly-10.0.0.Final/standalone/deployments/`
 
 **Run the JSP page:**
 http://localhost:8080/index.jsp
@@ -286,6 +286,6 @@ http://localhost:8080/index.jsp
 http://localhost:8080/api
 
 **Run the Standalone Java ‘Job’:**
-java -jar guice-example-standalone/target/guice-example-standalone-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+`java -jar guice-example-standalone/target/guice-example-standalone-1.0.0-SNAPSHOT-jar-with-dependencies.jar`
 
 *Note that i use WildFly 10 and Java 8 but the example can be run in any JBoss or WildFly version and with Java 6. You might have to modify some dependency versions as they have been compiled for Java 8.*
